@@ -20,12 +20,10 @@ theme:
     code: Roboto Mono
   features:
     - search.suggest
-  custom_dir: overrides
 
 plugins:
   - search
   - roamlinks
-  - obsidian-support
   - blog:
       blog_dir: blog
   - rss:
