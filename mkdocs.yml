@@ -23,22 +23,28 @@ theme:
 
 plugins:
   - search
-  - roamlinks
-  - blog:
-      blog_dir: blog
-  - rss:
-      match_path: blog/blog/.*
-      date_from_meta:
-        as_creation: date
-      categories:
-      - categories
-      - tags
-  - mkdocs-pdf
+  - roamlinks # https://github.com/Jackiexiao/mkdocs-roamlinks-pluginmk
+  # - blog:
+  #     blog_dir: blog
+  # - rss:
+  #     match_path: blog/blog/.*
+  #     date_from_meta:
+  #       as_creation: date
+  #     categories:
+  #     - categories
+  #     - tags
+  - mkdocs-pdf  # Render PDFs in page
+                # To embed a PDF file simple use the following syntax.
+                #   ![Alt text](<path to pdf>){ type=application/pdf }
+                # Optionally, you can specify style constraints, e.g.
+                #   ![Alt text](<path to pdf>){ type=application/pdf style="min-height:25vh;width:100%" }
 
 # Extensions
 markdown_extensions:
   - footnotes
   - attr_list
+  - toc:
+      permalink: true
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.superfences
@@ -58,12 +64,6 @@ markdown_extensions:
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
 
-  - toc:
-      permalink: true
-
-
 extra_javascript:
-  - javascripts/mathjax.js
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-  - https://unpkg.com/mermaid/dist/mermaid.min.js 
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js   # math rendering https://www.mathjax.org/
+  - https://unpkg.com/mermaid/dist/mermaid.min.js                 # Diagram Rendering https://mermaid.js.org/
